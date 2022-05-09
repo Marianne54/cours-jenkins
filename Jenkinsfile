@@ -27,10 +27,11 @@ node {
         }
 
     }
-    stage("Deploy") {
-       configFileProvider([configFile(fileId: '4c67d90d-f1d0-485d-a32b-ed13e070de5f', variable: 'MAVEN_SETTINGS')]) {
+     stage("Deploy"){
+        configFileProvider([configFile(fileId:"4c67d90d-f1d0-485d-a32b-ed13e070de5f", variable: 'MAVEN_SETTINGS')]) {
         // Exécuter la commande mvn avec le settings
-        mvn Deploy -s $MAVEN_SETTINGS -Preposilite
+      sh "mvn -s $MAVEN_SETTINGS -Preposilite"
+      }
     }
     
 }
