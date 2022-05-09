@@ -12,8 +12,8 @@ node {
         echo "mvn test"
         sh "mvn test"
     }
-    stage('Build artifact') {
-        echo "building Source Code"
+    stage('Build aproject') {
+        echo "building project"
         sh "mvn package -DskipTests"
     }
     stage('checkout') {
@@ -26,6 +26,10 @@ node {
             VERSION = "snapshot"
         }
 
+    }
+    stage("Deploy") {
+        configFileProvider([configFile(fileId: '4c67d90d-f1d0-485d-a32b-ed13e070de5f', variable: 'MAVEN_SETTINGS')])
+        sh "mvn deploy -s $MAVEN SETTINGS -Preposilite"
     }
     
 }
