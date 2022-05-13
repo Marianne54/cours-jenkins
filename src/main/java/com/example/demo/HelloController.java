@@ -1,4 +1,4 @@
-package com.sample.springboot;
+package com.example.demo;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +15,11 @@ public class HelloController {
 	@GetMapping("/")
 	public String index() {
 		return this.greetingService.greet();
+	}
+
+	@GetMapping("/toto")
+	public String toto() {
+		return this.greetingService.newGreet();
 	}
 
 }

@@ -17,9 +17,11 @@
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			
 		</dependency>
 
 		<dependency>
@@ -27,6 +29,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+  			<groupId>org.mockito</groupId>
+  			<artifactId>mockito-core</artifactId>
+		  	<scope>test</scope>
+		</dependency>
+
+	
 	</dependencies>
 
 	<build>
@@ -37,16 +46,16 @@
 			</plugin>
 		</plugins>
 	</build>
-	<distributionManagement>
+<distributionManagement>
 				<repository>
 					<id>reposilite-repository-releases</id>
 					<name>Reposilite Repository</name>
-					<url>172.16.44.89:8081/releases</url>
+					<url>http://172.16.44.89:8081/releases</url>
 				</repository>
 				<snapshotRepository>
 					<id>reposilite-repository-snapshots</id>
 					<name>Reposilite Repository</name>
-					<url>172.16.44.89:8081/snapshots</url>
+					<url>http://172.16.44.89:8081/snapshots</url>
 				</snapshotRepository>
 	</distributionManagement>
 
